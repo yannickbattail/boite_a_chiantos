@@ -7,7 +7,7 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  lyrics: string = '<div><i>basic initial HTML</i></div>';
+  lyrics: string = '';
 
   public sounds = {
     "barbare_01": "Poulet ! Poulet ! Piou, piou, piou !!",
