@@ -9,6 +9,7 @@ export class HomePage {
 
   lyrics: string = '';
   image: string = 'assets/images/chiantos.png';
+  soundName: string = '';
 
   public sounds = {
     "barbare_01": "Poulet ! Poulet ! Piou, piou, piou !!",
@@ -94,18 +95,29 @@ export class HomePage {
   public randomSound() {
     var files = Object.keys(this.sounds);
     var randomNum = this.getRandomInt(0, files.length);
-    var fileName = files[randomNum];
-    var audio = new Audio('assets/audio/'+fileName+'.mp3');
+    this.soundName = files[randomNum];
+    var audio = new Audio('assets/audio/'+this.soundName+'.mp3');
     audio.play();
-    this.lyrics = this.sounds[fileName];
-    var imageName = fileName.substring(0, fileName.length-3);
+    this.lyrics = this.sounds[this.soundName];
+    var imageName = this.soundName.substring(0, this.soundName.length-3);
     this.image = 'assets/images/'+imageName+'.jpg';
   }
 
+  public replay() {
+    if (this.soundName) {
+      var audio = new Audio('assets/audio/'+this.soundName+'.mp3');
+      audio.play();
+    }
+  }
+
+  /**
+   * The maximum is exclusive and the minimum is inclusive
+   * @param min 
+   * @param max 
+   */
   public getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
-    //The maximum is exclusive and the minimum is inclusive
   }
 }
