@@ -4,6 +4,8 @@ Application inspirée de https://play.google.com/store/apps/details?id=com.eleyo
 
 Cette application génère des vannes aléatoires des personnages de Naheulbeuk.
 
-#The code
+Télécharger l'apk : https://github.com/yannickbattail/boite_a_chiantos/raw/master/releases/android-debug.apk
+
+## The code
 
 This application is made whith ionic.
