@@ -1,9 +1,9 @@
 {
     "name": "boite_a_chiantos",
     "version": "0.0.1",
-    "author": "Ionic Framework",
+    "author": "Yannick Battail",
     "homepage": "http://ionicframework.com/",
-    "private": true,
+    "private": false,
     "scripts": {
         "clean": "ionic-app-scripts clean",
         "build": "ionic-app-scripts build",
@@ -44,7 +44,7 @@
         "ionic": "3.7.0",
         "typescript": "2.3.4"
     },
-    "description": "An Ionic project",
+    "description": "Boîte à chiantos",
     "cordova": {
         "plugins": {
             "cordova-plugin-console": {},
