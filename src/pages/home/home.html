@@ -8,14 +8,10 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3>Boîte à chiantos</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
   <button ion-button secondary id="random" (click)="randomSound()">Vanne random</button>
+  <div><img src="{{image}}" style="width: 20em; height: 20em;" /></div>
   <div>{{lyrics}}</div>
 </ion-content>
 <script>

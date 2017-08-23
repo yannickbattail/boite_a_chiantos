@@ -8,6 +8,7 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
 
   lyrics: string = '';
+  image: string = 'assets/images/chiantos.png';
 
   public sounds = {
     "barbare_01": "Poulet ! Poulet ! Piou, piou, piou !!",
@@ -97,6 +98,8 @@ export class HomePage {
     var audio = new Audio('assets/audio/'+fileName+'.mp3');
     audio.play();
     this.lyrics = this.sounds[fileName];
+    var imageName = fileName.substring(0, fileName.length-3);
+    this.image = 'assets/images/'+imageName+'.jpg';
   }
 
   public getRandomInt(min, max) {
