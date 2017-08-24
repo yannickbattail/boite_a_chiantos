@@ -1,6 +1,6 @@
-Application mobile boîte à chiantos
+Application mobile Bourse à chiantos
 
-Application inspirée de https://play.google.com/store/apps/details?id=com.eleyone.app.naheulbeuk.chiantosbox
+Application inspirée de la boîte à chiantos https://play.google.com/store/apps/details?id=com.eleyone.app.naheulbeuk.chiantosbox
 
 Cette application génère des vannes aléatoires des personnages de Naheulbeuk.
 

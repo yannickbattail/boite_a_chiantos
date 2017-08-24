@@ -44,7 +44,7 @@
         "ionic": "3.7.0",
         "typescript": "2.3.4"
     },
-    "description": "Boîte à chiantos",
+    "description": "Bourse à chiantos",
     "cordova": {
         "plugins": {
             "cordova-plugin-console": {},
