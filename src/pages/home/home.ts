@@ -12,7 +12,7 @@ export class HomePage {
   soundName: string = '';
 
   public sounds = {
-    "barbare_01": "Poulet ! Poulet ! Piou, piou, piou !!",
+    "barbare_01": "Poulet ! Poulet ! Piou, piou, piou !! (j\'ai perdu)",
     "barbare_02": "On s\'emmerde dans cette aventure !",
     "barbare_03": "La magie, c\'est pour les tarlouzes !!",
     "barbare_04": "Ta bouche sent comme les bottes de mon père après la pluie !",
@@ -27,7 +27,7 @@ export class HomePage {
     "elfe_06": "Tu veux une cagoule pour faire des bisous à ta copine ?",
     "elfe_07": "À mon avis, tu peux faire carrière dans le ramassage des poubelles.",
     "elfe_08": "J\'ai déjà vu des gens moches comme toi. Et d\'ailleurs, j\'ai vomi !",
-    "elfe_09": "Je pense que t\'aurais même pas le droit de rentrer dans ma forêt.",
+    "elfe_09": "Je pense que t\'aurais même pas le droit de rentrer dans ma forêt. (titre)",
     "magote_01": "Ts comme les miroirs, toi ! Tu réfléchis, mais tu penses pas.",
     "magote_02": "Je crois que tu as été affecté par un sort de stupidité.",
     "magote_03": "Tu espérais quoi en ouvrant cette boîte ? Devenir intelligent ?",
