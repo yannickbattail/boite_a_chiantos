@@ -90,6 +90,12 @@ export class AboutPage {
   }
 
   public randomNotification() {
+    for (var i = 0; i < 10 ; i++) {
+      this.scheduleRandomNotification();
+    }
+  }
+
+  private scheduleRandomNotification() {
     var files = Object.keys(this.sounds);
     var randomNum = this.getRandomInt(0, files.length);
     var soundName = files[randomNum];
@@ -97,13 +103,18 @@ export class AboutPage {
     var lyrics = this.sounds[soundName];
     var imageName = soundName.substring(0, soundName.length-3);
     var image = 'file://assets/images/'+imageName+'.png';
+    var seconds = this.getRandomInt(30, 300);
     this.localNotifications.schedule({
       text: lyrics,
-      at: new Date(new Date().getTime() + 60 * 1000),
+      at: new Date(new Date().getTime() + seconds * 1000),
       led: 'FF0000',
       sound: audioFile,
       icon: image
    });
+  }
+
+  public cancelAllNotifications() {
+    this.localNotifications.cancelAll();
   }
 
   /**
@@ -111,7 +122,7 @@ export class AboutPage {
    * @param min 
    * @param max 
    */
-  public getRandomInt(min, max) {
+  private getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
