@@ -100,7 +100,7 @@ export class HomePage {
     audio.play();
     this.lyrics = this.sounds[this.soundName];
     var imageName = this.soundName.substring(0, this.soundName.length-3);
-    this.image = 'assets/images/'+imageName+'.jpg';
+    this.image = 'assets/images/'+imageName+'.png';
   }
 
   public replay() {

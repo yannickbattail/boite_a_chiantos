@@ -93,10 +93,10 @@ export class AboutPage {
     var files = Object.keys(this.sounds);
     var randomNum = this.getRandomInt(0, files.length);
     var soundName = files[randomNum];
-    var audioFile = 'assets/audio/'+soundName+'.mp3';
+    var audioFile = 'file://assets/audio/'+soundName+'.mp3';
     var lyrics = this.sounds[soundName];
     var imageName = soundName.substring(0, soundName.length-3);
-    var image = 'assets/images/'+imageName+'.jpg';
+    var image = 'file://assets/images/'+imageName+'.png';
     this.localNotifications.schedule({
       text: lyrics,
       at: new Date(new Date().getTime() + 60 * 1000),
