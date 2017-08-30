@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { NotificationsPage } from '../pages/notifications/notifications';
 import { AboutPage } from '../pages/about/about';
 //import { ListPage } from '../pages/list/list';
 
@@ -15,6 +16,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
   declarations: [
     MyApp,
     HomePage,
+    NotificationsPage,
     AboutPage
     //ListPage
   ],
@@ -26,6 +28,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
   entryComponents: [
     MyApp,
     HomePage,
+    NotificationsPage,
     AboutPage 
     //ListPage
   ],
