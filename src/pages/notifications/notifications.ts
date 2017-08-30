@@ -8,7 +8,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 })
 export class NotificationsPage {
 
-  public sounds = {
+  public sounds: Object = {
     "barbare_01": "Poulet ! Poulet ! Piou, piou, piou !! (j\'ai perdu)",
     "barbare_02": "On s\'emmerde dans cette aventure !",
     "barbare_03": "La magie, c\'est pour les tarlouzes !!",
@@ -90,27 +90,35 @@ export class NotificationsPage {
   }
 
   public randomNotification() {
+    let notificationsList: Array<Object> = [];
     for (let i = 0; i < 10 ; i++) {
-      this.scheduleRandomNotification();
+      notificationsList.push(this.scheduleRandomNotification(i));
     }
+    this.localNotifications.schedule(notificationsList);
   }
 
-  private scheduleRandomNotification() {
-    var files = Object.keys(this.sounds);
-    var randomNum = this.getRandomInt(0, files.length);
-    var soundName = files[randomNum];
-    var audioFile = 'file://assets/audio/'+soundName+'.mp3';
-    var lyrics = this.sounds[soundName];
-    var imageName = soundName.substring(0, soundName.length-3);
-    var image = 'file://assets/images/'+imageName+'.png';
-    var seconds = this.getRandomInt(30, 3600);
-    this.localNotifications.schedule({
+  /**
+   * 
+   * @param number i 
+   * @returns Object
+   */
+  private scheduleRandomNotification(i: number) {
+    let files: Array<string> = Object.keys(this.sounds);
+    let randomNum: number = this.getRandomInt(0, files.length);
+    let soundName: string = files[randomNum];
+    let audioFile: string = 'file://assets/audio/'+soundName+'.mp3';
+    let lyrics: string = this.sounds[soundName];
+    let imageName: string = soundName.substring(0, soundName.length-3);
+    let image: string = 'file://assets/images/'+imageName+'.png';
+    //var seconds = this.getRandomInt(30, 3600);
+    let seconds: number = i * 60;
+    return {
       text: lyrics,
       at: new Date(new Date().getTime() + seconds * 1000),
       led: 'FF0000',
       sound: audioFile,
       icon: image
-   });
+   };
   }
 
   public cancelAllNotifications() {
@@ -119,10 +127,11 @@ export class NotificationsPage {
 
   /**
    * The maximum is exclusive and the minimum is inclusive
-   * @param min 
-   * @param max 
+   * @param min
+   * @param max
+   * @returns number
    */
-  private getRandomInt(min, max) {
+  private getRandomInt(min: number, max: number) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
