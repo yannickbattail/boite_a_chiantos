@@ -85,16 +85,26 @@ export class NotificationsPage {
     "ranger_14": "Faudrait être un peu plus motivé, si tu veux rentrer dans mon équipe !"
   };
 
+  public debugLog : string = 'debugLog';
+
   constructor(public navCtrl: NavController, private localNotifications: LocalNotifications) {
 
   }
 
   public randomNotification() {
-    let notificationsList: Array<Object> = [];
-    for (let i = 0; i < 10 ; i++) {
-      notificationsList.push(this.scheduleRandomNotification(i));
+    if (confirm("Ça fait une notification toutes les minutes avec une vanne chiantos, t'es sûr de vouloir ça?")) {
+      let notificationsList: Array<Object> = [];
+      for (let i = 1; i < 10 ; i++) {
+        notificationsList.push(this.scheduleRandomNotification(i));
+      }
+      var that = this;
+      this.localNotifications.schedule(notificationsList);
+      this.localNotifications.getAll().then((res) => {
+        res.forEach(notif => {
+          that.debugLog += notif.id+' '+notif.at+'<br />\r\n';
+        });
+      });
     }
-    this.localNotifications.schedule(notificationsList);
   }
 
   /**
@@ -121,6 +131,9 @@ export class NotificationsPage {
    };
   }
 
+  /**
+   * 
+   */
   public cancelAllNotifications() {
     this.localNotifications.cancelAll();
   }
