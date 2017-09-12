@@ -85,25 +85,28 @@ export class NotificationsPage {
     "ranger_14": "Faudrait être un peu plus motivé, si tu veux rentrer dans mon équipe !"
   };
 
-  public debugLog : string = 'debugLog';
+  public debugLog : string = '';
 
   constructor(public navCtrl: NavController, private localNotifications: LocalNotifications) {
 
   }
 
   public randomNotification() {
-    if (confirm("Ça fait une notification toutes les minutes avec une vanne chiantos, t'es sûr de vouloir ça?")) {
+    if (confirm("Ça fara une notification quelque part dans les 10 prochaines minutes avec une vanne chiantos, t'es sûr de vouloir ça?")) {
       let notificationsList: Array<Object> = [];
       for (let i = 1; i < 10 ; i++) {
         notificationsList.push(this.scheduleRandomNotification(i));
       }
       var that = this;
       this.localNotifications.schedule(notificationsList);
-      this.localNotifications.getAll().then((res) => {
+      /*
+      that.debugLog += 'debugLog: ';
+      this.localNotifications.getAllScheduled().then((res) => {
         res.forEach(notif => {
           that.debugLog += notif.id+' '+notif.at+'<br />\r\n';
         });
       });
+      */
     }
   }
 
@@ -120,8 +123,8 @@ export class NotificationsPage {
     let lyrics: string = this.sounds[soundName];
     let imageName: string = soundName.substring(0, soundName.length-3);
     let image: string = 'file://assets/images/'+imageName+'.png';
-    //var seconds = this.getRandomInt(30, 3600);
-    let seconds: number = i * 60;
+    let seconds = this.getRandomInt(1, 10) * 60;
+    //let seconds: number = i * 60;
     return {
       text: lyrics,
       at: new Date(new Date().getTime() + seconds * 1000),
