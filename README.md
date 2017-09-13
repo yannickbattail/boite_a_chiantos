@@ -8,4 +8,4 @@ Télécharger l'apk : https://github.com/yannickbattail/boite_a_chiantos/raw/mas
 
 ## The code
 
-This application is made whith ionic.
+This application is made with ionic.
