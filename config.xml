@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="fr.leserieux" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="fr.leserieux" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Bourse à chiantos</name>
   <description>Bourse de 1 kilo de bonbons chiantos</description>
   <author email="yannick.battail@gmail.com" href="http://ionicframework.com/">Yannick Battail</author>
@@ -42,6 +42,7 @@
     <splash src="resources\android\splash\drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
     <splash src="resources\android\splash\drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
     <splash src="resources\android\splash\drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
+    <hook type="after_prepare" src="remove_permissions.js"/>
   </platform>
   <platform name="ios">
     <allow-intent href="itms:*"/>

@@ -9,11 +9,22 @@
 
 <ion-content padding >
   <h3>Bourse à chiantos</h3>
-
-  <button ion-button secondary (click)="randomSound()">Manger un chiantos</button>
-  <button ion-button secondary (click)="replay()">Lécher l'emballage</button>
-  <h4>{{lyrics}}</h4>
-  <div><img src="{{image}}" style="width: 20em; height: 20em;" /></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4"><button ion-button secondary (click)="randomSound()">Manger un chiantos</button></div>
+      <div class="col-md-4"><button ion-button secondary (click)="replay()">Lécher l'emballage</button></div>
+      <div class="col-md-2"></div>
+      
+      
+    </div>
+    <div class="row">
+      <h4>{{lyrics}}</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><img src="{{image}}" class="img-responsive" /></div>
+    </div>
+  </div>
 </ion-content>
 <script>
 
